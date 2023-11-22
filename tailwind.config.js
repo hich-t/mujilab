@@ -7,11 +7,19 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        'lato': ['Lato', 'sans-serif'],
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      height: {
+        '128': '32rem', // 512px
+        '144': '36rem', // 576px
+        // ... add as many as you need
+      }
     },
   },
   plugins: [],
