@@ -1,5 +1,6 @@
-import Services from "./services";
 import Link from "next/link";
+import EmailIcon from '@mui/icons-material/Email';
+import { Email } from "@mui/icons-material";
 
 const Landing = () => {
   return (
@@ -7,7 +8,7 @@ const Landing = () => {
       <div
         style={{
           boxShadow:
-            "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;",
+            "rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px",
         }}
         className="h-32 w-full bg-white justify-around font-lato flex items-center"
       >
@@ -20,8 +21,7 @@ const Landing = () => {
             />
           </Link>
 
-          <div className="border-l-4 border-black-1000 mx-10 h-6"></div>
-
+          <div className="border-l-4 border-black mx-10 h-10"></div>
 
           <a
             href="https://www.instagram.com/muji.lab"
@@ -39,7 +39,9 @@ const Landing = () => {
           <Link href="/services">
             <p className="text-black mr-10 cursor-pointer">Nos Services</p>
           </Link>
-          <p className="text-black">Nous Contacter</p>
+          <a href="#contact-form" className="text-black cursor-pointer">
+            Nous Contacter
+          </a>
         </div>
       </div>
 
@@ -74,7 +76,7 @@ const Landing = () => {
         <p className="font-lato text-black font-thin text-2xl mt-4 mb-24">
           Que proposons-nous ?
         </p>
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-start justify-between">
           <div>
             <img className="w-12 mb-4" src="Assets/images/website.png" />
             <h1 className="font-regular text-xl mb-4">Création de Sites Web</h1>
@@ -156,7 +158,10 @@ const Landing = () => {
         </div>
       </div>
 
-      <div className="bg-black h-auto p-12 flex flex-col items-center justify-center">
+      <div
+        className="bg-black h-auto p-12 flex flex-col items-center justify-center"
+        id="contact-form"
+      >
         <p className="font-lato text-white text-5xl font-thin">
           Créeons de la magie ensemble
         </p>
@@ -196,21 +201,62 @@ const Landing = () => {
               required
             ></textarea>
           </label>
-          <button
-            type="submit"
-            className="w-18 bg-white font-normal text-black p-2"
-          >
-            Envoyer
-          </button>
+
+          <div className="flex items-center justify-between">
+            <button
+              type="submit"
+              className="w-18 bg-white font-normal text-black p-2"
+            >
+              Envoyer
+            </button>
+
+            <div className="flex items-center">
+              <p className="font-lato text-white font-thin mr-4">
+                Ou envoyez-nous un message sur Instagram !
+              </p>
+              <a
+                href="https://www.instagram.com/muji.lab"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img
+                  className="w-8 cursor-pointer"
+                  src="Assets/images/insta_white.png"
+                  alt="logo instagram"
+                />
+              </a>
+            </div>
+          </div>
         </form>
       </div>
 
       <div className="h-32 p-12 font-lato flex items-center bg-white justify-around shadow-custom">
-        <img
-          className="w-24"
-          src="Assets/images/muji_font.png"
-          alt="Logo Muji"
-        />
+        <div className="flex items-center">
+          <img
+            className="w-24"
+            src="Assets/images/muji_font.png"
+            alt="Logo Muji"
+          />
+
+          <div className="border-l-4 border-black mx-10 h-10"></div>
+
+          <a
+            href="https://www.instagram.com/muji.lab"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="w-10 cursor-pointer"
+              src="Assets/images/insta.png"
+              alt="logo instagram"
+            />
+          </a>
+        </div>
+
+        <div className="flex items-center">
+        <EmailIcon className="text-black mr-4" />
+        <a href="mailto:contact@mujilab.com" className="text-black text-xl font-lato font-light cursor-pointer">contact@mujilab.com</a>
+        </div>
 
         <img
           className="w-16"

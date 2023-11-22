@@ -36,13 +36,30 @@ useEffect(() => {
         style={{ boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.5)" }}
         className="h-32 w-full bg-white justify-around font-lato flex items-center"
       >
-        <Link href="/">
-          <img
-            className="w-16 cursor-pointer"
-            src="Assets/images/muji_logo.png"
-            alt="Logo Muji Lab"
-          />
-        </Link>
+    <div className="flex items-center">
+          <Link href="/">
+            <img
+              className="w-16 cursor-pointer"
+              src="Assets/images/muji_logo.png"
+              alt="Logo Muji Lab"
+            />
+          </Link>
+
+          <div className="border-l-4 border-black mx-10 h-10"></div>
+
+
+          <a
+            href="https://www.instagram.com/muji.lab"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              className="w-12 cursor-pointer"
+              src="Assets/images/insta.png"
+              alt="logo instagram"
+            />
+          </a>
+        </div>
 
         <div className="font-lato flex text-xl font-light">
           <Link href="/services">
