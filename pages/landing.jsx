@@ -1,10 +1,66 @@
+"use client"
+
 import Link from "next/link";
 import EmailIcon from '@mui/icons-material/Email';
-import { Email } from "@mui/icons-material";
+import emailjs from "emailjs-com"
+import React, { useEffect, useState } from 'react';
+import Head from 'next/head';
+
 
 const Landing = () => {
+
+    useEffect(() => {
+        // Initialize EmailJS
+        emailjs.init("XsLKxGt7C8WnooPP9"); // Use your public key here
+
+        // Dynamically load the reCAPTCHA script
+        const script = document.createElement('script');
+        script.src = 'https://www.google.com/recaptcha/api.js?render=6Lc0zBgpAAAAANL3sWhb9HM7cwKz9f9dxvoA_iYW';
+        script.addEventListener('load', () => {
+            // Script has loaded
+            console.log("reCAPTCHA script loaded");
+        });
+        document.body.appendChild(script);
+    }, []);
+    const sendEmail = (e) => {
+        e.preventDefault();
+    
+        window.grecaptcha.ready(() => {
+            window.grecaptcha.execute('6Lc0zBgpAAAAANL3sWhb9HM7cwKz9f9dxvoA_iYW', { action: 'submit' }).then((token) => {
+                if (!token) {
+                    console.error("Failed to retrieve reCAPTCHA token");
+                    return;
+                }
+    
+                // Attach the token to the form
+                const form = document.getElementById('contact-form');
+                const tokenInput = document.createElement('input');
+                tokenInput.type = 'hidden';
+                tokenInput.name = 'g-recaptcha-response';
+                tokenInput.value = token;
+                form.appendChild(tokenInput);
+    
+                // Send the email with EmailJS
+                emailjs.sendForm('service_z2o67va', 'template_hfnrfjo', form)
+                    .then((result) => {
+                        console.log('Email successfully sent!', result.text);
+                        // You may want to reset the form or give user feedback
+                    }, (error) => {
+                        console.error('Failed to send email:', error);
+                        // Handle errors here
+                    });
+            });
+        });
+    };
+    
+
   return (
     <main className="">
+
+        <Head>
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lc0zBgpAAAAANL3sWhb9HM7cwKz9f9dxvoA_iYW" async defer></script>
+      </Head>
+
       <div
         style={{
           boxShadow:
@@ -39,7 +95,7 @@ const Landing = () => {
           <Link href="/services">
             <p className="text-black mr-10 cursor-pointer">Nos Services</p>
           </Link>
-          <a href="#contact-form" className="text-black cursor-pointer">
+          <a href="#contact-section" className="text-black cursor-pointer">
             Nous Contacter
           </a>
         </div>
@@ -160,7 +216,7 @@ const Landing = () => {
 
       <div
         className="bg-black h-auto p-12 flex flex-col items-center justify-center"
-        id="contact-form"
+        id="contact-section" 
       >
         <p className="font-lato text-white text-5xl font-thin">
           Créeons de la magie ensemble
@@ -169,8 +225,8 @@ const Landing = () => {
         <form
           className="w-1/2 mt-10 mb-10 font-lato font-thin text-white"
           name="contact"
-          data-netlify="true"
-          method="POST"
+          onSubmit={sendEmail}
+          id="contact-form"
         >
           <label className="block mb-2">
             Nom
@@ -246,7 +302,7 @@ const Landing = () => {
             rel="noopener noreferrer"
           >
             <img
-              className="w-10 cursor-pointer"
+              className="w-10    cursor-pointer"
               src="Assets/images/insta.png"
               alt="logo instagram"
             />
