@@ -40,7 +40,7 @@ const Landing = () => {
               <img
                 className="w-16 cursor-pointer"
                 src="Assets/images/muji_logo.png"
-                alt="Logo Muji Lab"
+                alt="Logo Muji Lab - Création de Site web et logos"
               />
             </Link>
             <div className="border-l-4 border-black mx-10 h-10"></div>
@@ -52,7 +52,7 @@ const Landing = () => {
               <img
                 className="w-12 cursor-pointer"
                 src="Assets/images/insta.png"
-                alt="logo instagram"
+                alt="logo instagram Muji Lab Création de Site web et logos"
               />
             </a>
           </div>
@@ -73,7 +73,7 @@ const Landing = () => {
               <img
                 className="w-12 cursor-pointer"
                 src="Assets/images/muji_logo.png"
-                alt="Logo Muji Lab"
+                alt="Logo Muji Lab - Création de Site web et logos"
               />
             </Link>
             <div className="border-l-2 border-black mx-3 h-5"></div>
@@ -85,7 +85,7 @@ const Landing = () => {
               <img
                 className="w-10 cursor-pointer"
                 src="Assets/images/insta.png"
-                alt="logo instagram"
+                alt="logo instagram muji lab - Création de Site web et logos"
               />
             </a>
           </div>
@@ -130,17 +130,17 @@ const Landing = () => {
           className="w-full h-full object-cover"
         />
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 flex flex-col justify-start items-center pt-6 sm:pt-32">
-          <p className="text-white text-3xl font-lato font-normal mb-6 sm:mb-12">
+          <h1 className="text-white text-3xl sm:text-6xl font-lato font-normal sm:font-thin mb-6 sm:mb-12">
             Web - Design - Print
-          </p>
+          </h1>
           <img
             className=" w-1/2 sm:w-5/12 mb-6 sm:mb-32"
             src="Assets/images/muji_font_blanc.png"
-            alt="Logo Muji"
+            alt="Logo Muji Lab - Création de Site web et logos"
           />
-          <p className="text-white text-2xl sm:text-6xl font-lato font-light sm:font-thin">
+          <h2 className="text-white text-2xl sm:text-6xl font-lato font-light sm:font-thin">
             Libérons votre imagination
-          </p>
+          </h2>
         </div>
       </div>
 
