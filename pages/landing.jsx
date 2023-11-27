@@ -366,7 +366,7 @@ const Landing = () => {
     {/* Email Section */}
     <div className="flex items-center mb-8 sm:mb-0">
       <EmailIcon className="text-black mr-4" />
-      <a href="mailto:contact@mujilab.com" className="text-black text-lg sm:text-xl font-light">
+      <a href="mailto:contact@mujilab.com" target="_blank" className="text-black text-lg sm:text-xl font-light">
         contact@mujilab.com
       </a>
     </div>
