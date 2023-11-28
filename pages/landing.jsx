@@ -229,7 +229,7 @@ const Landing = () => {
       {windowWidth < 640 ? (
     <img
       src="Assets/images/bg3_mobile.png"
-      className="w-full h-96 object-cover"
+      className="w-full h-auto object-cover"
     />
   ) : (
     <img
